@@ -23,7 +23,9 @@ public class FoodRetriever {
         try {
             JSONObject jsonObject = new JSONObject(requestContent);
             int totalHits = jsonObject.getInt("totalHits");
-            System.out.println(totalHits);
+            String query = jsonObject.getString(FoodQuery.KEY_QUERY);
+
+            System.out.println(totalHits + " " + query);
         } catch(JSONException JSONException) {
             JSONException.printStackTrace();
         }
@@ -33,7 +35,7 @@ public class FoodRetriever {
         FoodQuery a = new FoodQuery("Daiya", API_KEY);
         a.put(FoodQuery.KEY_DATATYPE, "Branded");
         a.put(FoodQuery.KEY_PAGE_SIZE, "1");
-
+        System.out.println(a.makeURLQuery(API_ENDPOINT));
         buildFood(a);
 
     }

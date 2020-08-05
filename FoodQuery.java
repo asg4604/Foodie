@@ -1,7 +1,3 @@
-import com.sun.jndi.toolkit.url.Uri;
-import com.sun.org.apache.xerces.internal.impl.dv.InvalidDatatypeValueException;
-import javafx.util.Pair;
-
 import java.util.*;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -29,6 +25,7 @@ public class FoodQuery {
     public static final String KEY_SORT_BY = "sortBy";
     public static final String KEY_SORT_ORDER = "sortOrder";
     public static final String KEY_QUERY = "query";
+    public static final String KEY_REQUIRE_ALL = "requireAll";
     public FoodQuery() {
         query_map = new HashMap<>();
     }
