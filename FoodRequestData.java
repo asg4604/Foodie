@@ -66,4 +66,32 @@ public class FoodRequestData {
         }
     }
 
+    public ArrayList<String> getDataType() {
+        return dataType;
+    }
+
+    public String getQuery() {
+        return query;
+    }
+
+    public String getSearchInput() {
+        return searchInput;
+    }
+
+    public boolean isRequiringAllWords() {
+        return requireAllWords;
+    }
+
+    public int getPageNumber() {
+        return pageNumber;
+    }
+
+    public int getTotalHits() {
+        return totalHits;
+    }
+
+    public ArrayList<FoodItem> getFoodItems() {
+        return foodItems;
+    }
+
 }
