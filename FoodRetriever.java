@@ -15,9 +15,10 @@ public class FoodRetriever {
         return content;
     }
 
-    public static void buildFood(FoodQuery foodQuery) {
+    public static FoodRequestData buildFood(FoodQuery foodQuery) {
         String requestContent = loadData(foodQuery);
         FoodRequestData requestData = new FoodRequestData(requestContent);
+        return requestData;
     }
 
     public static void main(String[] args)  {
@@ -25,7 +26,10 @@ public class FoodRetriever {
         a.put(FoodQuery.KEY_DATATYPE, "Branded");
         a.put(FoodQuery.KEY_PAGE_SIZE, "6");
         System.out.println(a.makeURLQuery(API_ENDPOINT));
-        buildFood(a);
-
+        // buildFood(a);
+        FoodFilter foodFilter = new FoodFilter("Milk, Corn", "Milk:Coconut,Milk:Almond");
+        System.out.println(foodFilter.getRestrictedWords());
+        System.out.println(foodFilter.getSaveWords("Milk"));
+        System.out.println(foodFilter.deepSearch("almond juice"));
     }
 }
